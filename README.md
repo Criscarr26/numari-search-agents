@@ -1,39 +1,39 @@
-# Numari — Agentes de búsqueda (DFS, BFS y A*)
+# Numari — Search agents (DFS, BFS and A*)
 
-Implementación del puzzle **Numari** jugable por consola, junto a tres agentes de
-búsqueda que lo resuelven automáticamente. Proyecto de *Introducción a la
-Inteligencia Artificial* (ITLA).
+Implementation of the **Numari** puzzle, playable in the console, together with
+three search agents that solve it automatically. *Introduction to Artificial
+Intelligence* project (ITLA).
 
-## El juego
+## The game
 
-En Numari empiezas en una celda con número y debes caminar exactamente esa cantidad
-de celdas vacías hasta llegar al siguiente número, repitiendo el proceso hasta visitar
-**todas** las celdas del tablero. Incluye 16 niveles (de 3x3 fácil a 10x10 muy difícil)
-y soporta niveles personalizados desde archivos `.txt`.
+In Numari you start on a numbered cell and must walk exactly that many empty
+cells to reach the next number, repeating the process until you visit **all** the
+cells on the board. It includes 16 levels (from easy 3x3 to very hard 10x10) and
+supports custom levels from `.txt` files.
 
-## Los agentes
+## The agents
 
-| Agente | Estructura | Detalle |
+| Agent | Structure | Detail |
 |---|---|---|
-| **DFS** | Pila explícita | Expansión UDLR inversa al push |
-| **BFS** | Cola (deque) | Garantiza el camino más corto |
-| **A\*** | Cola de prioridad | `f(n) = g(n) + h(n)` con 5 heurísticas normalizadas |
+| **DFS** | Explicit stack | UDLR expansion reversed on push |
+| **BFS** | Queue (deque) | Guarantees the shortest path |
+| **A\*** | Priority queue | `f(n) = g(n) + h(n)` with 5 normalized heuristics |
 
-Las heurísticas de A\* (celdas restantes, pasos pendientes, números restantes,
-aislamiento y distancia Manhattan) se combinan con **8 configuraciones de pesos**
-para comparar su efecto en la búsqueda.
+The A\* heuristics (remaining cells, pending steps, remaining numbers, isolation
+and Manhattan distance) are combined with **8 weight configurations** to compare
+their effect on the search.
 
-Cada ejecución reporta métricas estándar: camino a la meta, costo, nodos expandidos,
-profundidad de búsqueda, tiempo y uso máximo de RAM.
+Each run reports standard metrics: path to the goal, cost, expanded nodes,
+search depth, time and peak RAM usage.
 
-## Archivos
+## Files
 
-- [`Numari_Agentes_Final.ipynb`](Numari_Agentes_Final.ipynb) — versión completa con los tres agentes y el menú
-- [`Numari_final.ipynb`](Numari_final.ipynb) — versión del juego jugable
-- [`Numari_Benchmark.xlsx`](Numari_Benchmark.xlsx) — resultados comparativos de los agentes
+- [`Numari_Agentes_Final.ipynb`](Numari_Agentes_Final.ipynb) — full version with the three agents and the menu
+- [`Numari_final.ipynb`](Numari_final.ipynb) — playable game version
+- [`Numari_Benchmark.xlsx`](Numari_Benchmark.xlsx) — comparative agent results
 
-## Cómo ejecutarlo
+## How to run it
 
-Diseñado para **Google Colab** (usa `google.colab.output` para limpiar la pantalla
-del menú). Abrir el notebook, ejecutar las celdas en orden y la última celda inicia
-el menú interactivo: elegir nivel, jugar manualmente o dejar que un agente lo resuelva.
+Designed for **Google Colab** (it uses `google.colab.output` to clear the menu
+screen). Open the notebook, run the cells in order and the last cell starts the
+interactive menu: choose a level, play manually or let an agent solve it.
